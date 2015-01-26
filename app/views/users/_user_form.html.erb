@@ -1,0 +1,17 @@
+<%= form_for user do |f| %>
+  <fieldset>
+    <div>
+      <%= f.text_field :email, placeholder: 'email' %>
+      <%= f.text_field :email_confirmation, placeholder: 'email_confirmation' %>
+    </div>
+    
+    <div>
+      <%= f.password_field :password, placeholder: 'password' %>
+      <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
+    </div>
+   
+    <%= f.submit 'save user', class: "button success expand" %>
+  </fieldset>
+
+  
+<% end %>
