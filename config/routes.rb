@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'session#new'
+  root to: 'users#new'
 
   # session routes
   get '/signup', to: 'users#new', as: 'signup'
