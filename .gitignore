@@ -17,3 +17,6 @@
 
 # Ignore log
 /log
+
+# Ignore .env files to keep Secrets from being uploaded to github
+.env
