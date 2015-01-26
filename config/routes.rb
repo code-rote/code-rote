@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'snippets/index'
+
+  get 'snippets/new'
+
+  get 'snippets/edit'
+
+  get 'snippets/show'
+
+  get 'steps/index'
+
+  get 'steps/new'
+
+  get 'steps/edit'
+
+  get 'steps/show'
+
+  get 'sessions/new'
+
   get 'users/index'
 
   get 'users/new'
