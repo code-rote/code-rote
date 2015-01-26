@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+// bootstrap core js
+//= require bootstrap/dist/js/bootstrap.min.js
+
 // bootstrap-material-design
 //= require bootstrap-material-design/dist/js/material.min.js
 //= require bootstrap-material-design/dist/js/ripples.min.js 
