@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = current_user.articles
+    
   end
 
   def edit
