@@ -41,7 +41,13 @@ gem 'factory_girl_rails'
 # Use ffaker for data generator
 gem 'ffaker'
 
+# Use foundation5 front-end framework
+gem 'foundation-rails'
+
 group :development, :test do
+
+  # Use rails_layout for installation of foundation5
+  gem 'rails_layout'
 
   # Use dotenv-rails for environment variables
   gem 'dotenv-rails'
