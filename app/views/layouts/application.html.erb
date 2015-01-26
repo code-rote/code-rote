@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="row">
+  <div class="col-sm-6">
+    <%# render partial: 'layouts/navbar' %>
+    <%= yield %>
+  </div>
+  <div class="col-sm-6">
+    Still may need to add bootstrap... columns are not readjusting.
+  </div>
+</div>
 
-<%= yield %>
 
 </body>
 </html>
