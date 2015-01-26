@@ -18,11 +18,14 @@
 
 //= require prism.js
 
-// prism syntax highlighter script
-$(document).on('ready page:load', function() {
-    Prism.highlightAll();
-});
+
+
 
 $(function() {
   $(document).foundation();
+
+  // prism syntax highlighter script
+  $(document).on('ready page:load', function() {
+      Prism.highlightAll();
+  });
 });
