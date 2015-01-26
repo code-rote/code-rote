@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sites/index'
+
+  get 'sites/about'
+
+  get 'sites/contact'
+
   root to: 'users#new'
 
   # session routes
