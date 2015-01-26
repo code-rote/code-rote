@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
   delete '/sessions', to: 'sessons#destroy', as: 'logout'
+
+  # user routes
+  resources :users, except: [:index, :new]
+  get '/profile', to: 'users#profile'
 end
