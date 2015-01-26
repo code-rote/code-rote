@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//= require prism.js
+
+// prism syntax highlighter script
+$(document).on('ready page:load', function() {
+    Prism.highlightAll();
+});
