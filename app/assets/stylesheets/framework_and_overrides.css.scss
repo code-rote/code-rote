@@ -21,6 +21,33 @@
   @extend .columns;
   @extend .text-center;
   }
+
+// @mixin code {
+//   @extend 
+//   media="all"
+// code[class*="language-"], pre[class*="language-"] {
+// color: black;
+// text-shadow: 0 1px white;
+// font-family: Consolas, Monaco, 'Andale Mono', monospace;
+// direction: ltr;
+// text-align: left;
+// white-space: pre;
+// word-spacing: normal;
+// word-break: normal;
+// line-height: 1.5;
+.code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: normal;
+  color: #fff;
+  background-color: #fff;
+  border-width: 0px; 
+  border-style: solid; 
+  border-color: #fff;
+  line-height: .5;
+  text-shadow: 0 0px white;
+  // padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
 // create your own classes
 // to make views framework-neutral
 .column {
