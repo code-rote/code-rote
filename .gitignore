@@ -20,3 +20,6 @@
 
 # Ignore .env files to keep Secrets from being uploaded to github
 .env
+
+# Ignore Bower Package path
+vendor/assets/components/
