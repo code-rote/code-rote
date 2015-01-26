@@ -8,12 +8,15 @@
 </head>
 <body>
 <div class="row">
-  <div class="col-sm-6">
-    <%# render partial: 'layouts/navbar' %>
-    <%= yield %>
-  </div>
-  <div class="col-sm-6">
-    Still may need to add bootstrap... columns are not readjusting.
+  <div class="col-sm-12">
+    <%= render partial: 'layouts/navbar' %>
+    
+    <div class="row centered">
+      <div class="container col-sm-10 ">
+        <%= yield %>
+      </div>
+    </div>
+    
   </div>
 </div>
 

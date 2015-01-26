@@ -12,6 +12,11 @@
  *
  *= require_tree .
  *= require_self
+
+* bootstrap core css
+*= require bootstrap/dist/css/bootstrap.min.css
+
+
 * bootstrap-material-design  
 *= require bootstrap-material-design/dist/css/material-wfont.min.css
 *= require bootstrap-material-design/dist/css/ripples.min.css
