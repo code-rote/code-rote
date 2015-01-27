@@ -20,4 +20,7 @@
 
 // bootstrap-material-design
 //= require bootstrap-material-design/dist/js/material.min.js
-//= require bootstrap-material-design/dist/js/ripples.min.js 
+//= require bootstrap-material-design/dist/js/ripples.min.js
+
+// editArea real-time syntax highlighter for a text area
+//= require EditArea/edit_area/edit_area_full.js

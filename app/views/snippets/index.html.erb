@@ -11,6 +11,7 @@
             <p><%= step.description %></p>
           </div>
           <div>
+            <%= link_to 'Show', step_path(step.id), class: 'btn btn-primary' %>
             <%= link_to 'Edit', edit_step_path(step.id), class: 'btn btn-primary' %>
             <%= link_to 'Delete', step_path(step.id), method: :delete, class: "btn btn-warning" %>
           </div>
@@ -31,7 +32,7 @@
         <%= snippet.snippet %>
         </code>
       </pre>
-
+      <%= link_to 'Show', snippet_path(snippet.id), class: 'btn btn-primary' %>
       <%= link_to 'Edit', edit_snippet_path(snippet.id), class: 'btn btn-primary' %>
       <%= link_to 'Delete', snippet_path(snippet.id), method: :delete, class: "btn btn-warning" %>
     </div>

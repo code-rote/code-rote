@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script language="javascript" type="text/javascript">
+  editAreaLoader.init({
+    id : "snippet_snippet"   // textarea id
+    ,syntax: "ruby"      // syntax to be uses for highgliting
+    ,start_highlight: true    // to display with highlight mode on start-up
+  });
+  </script>
 </head>
 <body>
 <div class="row">

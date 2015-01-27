@@ -1,6 +1,6 @@
 <%= form_for snippet do |f| %>
   <div class="inputs">
-    <%= f.text_area :snippet, placeholder: 'Snippet', class: 'form-control' %>
+    <%= f.text_area :snippet, placeholder: 'Snippet', :cols => "10", :rows => "25", class: 'form-control' %>
   </div>
   
   <%= f.submit 'Save Snippet' , class: 'btn btn-success' %>
