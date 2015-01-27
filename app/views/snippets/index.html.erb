@@ -1,11 +1,41 @@
-<h1>Snippets#index</h1>
-<p>Find me in app/views/snippets/index.html.erb</p>
-<% @steps.each do |step| %>
-  <%= step.name %>
-  <%= step.description %>
+<div class="container">
+  <h1>Snippets and Steps</h1>
+  <% @steps.each do |step| %>
+    <div class="row row-centered">
+      <div class="col-sm-12 col-centered panel">
 
-<% end %>
+          <div>
+            <h3><%= step.name %></h3>
+          </div>
+          <div>
+            <p><%= step.description %></p>
+          </div>
+          <div>
+            <%= link_to 'Edit', edit_step_path(step.id), class: 'btn btn-primary' %>
+            <%= link_to 'Delete', step_path(step.id), method: :delete, class: "btn btn-warning" %>
+          </div>
 
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<div class="container">
+<h2>Snippets</h2>
 <% @snippets.each do |snippet| %>
-  <%= snippet.snippet %>
+  <div class="row row-centered">
+    <div class="col-sm-12 col-centered">
+      
+      <pre>
+        <code class="language-javascript">
+        <%= snippet.snippet %>
+        </code>
+      </pre>
+
+      <%= link_to 'Edit', edit_snippet_path(snippet.id), class: 'btn btn-primary' %>
+      <%= link_to 'Delete', snippet_path(snippet.id), method: :delete, class: "btn btn-warning" %>
+    </div>
+  </div>
+  <hr>
 <% end %>
+</div>

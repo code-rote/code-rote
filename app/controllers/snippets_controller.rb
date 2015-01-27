@@ -13,11 +13,20 @@ class SnippetsController < ApplicationController
     redirect_to snippet_path(snippet)
   end
 
-  def edit
-  end
-
   def show
     find_snippet
+  end
+
+  def edit
+    find_snippet
+  end
+
+  def update
+  end
+
+  def destroy
+    @snippet.destroy
+    redirect_to snippets_path
   end
 
     private

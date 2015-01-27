@@ -21,6 +21,21 @@
 *= require bootstrap-material-design/dist/css/material-wfont.min.css
 *= require bootstrap-material-design/dist/css/ripples.min.css
 *= require bootstrap-material-design/dist/css/material.min.css
+
+* prism theme, downloaded from: http://prismjs.com/download.html
+*= require prism/themes/prism-dark.css
  */
 
-
+/*bootstrap custom css*/
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
