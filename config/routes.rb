@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'sites/index'
 
-  get 'sites/about'
+  root to: 'sites#index'
 
-  get 'sites/contact'
-
-  root to: 'users#new'
+  # site routes
+  get '/', to: 'sites#index'
+  get '/about', to: 'sites#about'
+  get '/contact', to: 'sites#contact'
 
   # session routes
   get '/signup', to: 'users#new', as: 'signup'
