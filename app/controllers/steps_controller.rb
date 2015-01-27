@@ -12,11 +12,18 @@ class StepsController < ApplicationController
     redirect_to step_path(step)
   end
 
-  def edit
-  end
-
   def show
     find_step
+  end
+
+  def edit
+    find_step
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
     private

@@ -14,5 +14,10 @@
     "vendor/assets/components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "prism": "git@github.com:LeaVerou/prism.git#gh-pages",
+    "bootstrap": "~3.3.2",
+    "bootstrap-material-design": "~0.2.2"
+  }
 }
