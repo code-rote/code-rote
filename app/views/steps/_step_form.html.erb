@@ -1,5 +1,7 @@
 <%= form_for step do |f| %>
-  <%= f.text_field :name, placeholder: 'Step Name', class: 'form-control'  %>
-  <%= f.text_field :description, placeholder: 'Description', class: 'form-control'  %>
-  <%= f.submit 'Save Step', class: 'btn btn-success btn-flat pull-right' %>
+  <div class="inputs">
+    <%= f.text_field :name, placeholder: 'Step Name', class: 'form-control'  %>
+    <%= f.text_field :description, placeholder: 'Description', class: 'form-control'  %>
+  </div>
+    <%= f.submit 'Save Step', class: 'btn btn-success btn-flat pull-right' %>
 <% end %>

@@ -1,2 +1,4 @@
-<h1>Snippets#new</h1>
-<p>Find me in app/views/snippets/new.html.erb</p>
+<div class="col-sm-6 col-sm-offset-3 centered">
+  <h1>New Snippet</h1>
+  <%= render partial: 'snippets/snippet_form', locals: {snippet: @snippet} %>
+</div>
