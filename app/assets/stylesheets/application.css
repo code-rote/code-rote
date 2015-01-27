@@ -20,7 +20,6 @@
 * bootstrap-material-design  
 *= require bootstrap-material-design/dist/css/material-wfont.min.css
 *= require bootstrap-material-design/dist/css/ripples.min.css
-*= require bootstrap-material-design/dist/css/material.min.css
 
 * prism theme, downloaded from: http://prismjs.com/download.html
 *= require prism/themes/prism-dark.css

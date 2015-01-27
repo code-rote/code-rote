@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 # prism.js files
 Rails.application.config.assets.precompile += %w( prism/components/prism-javascript.min.js )
 Rails.application.config.assets.precompile += %w( prism/prism.js )
+Rails.application.config.assets.precompile += %w( assets/stylesheets/material-design-custom.less )

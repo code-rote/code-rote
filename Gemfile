@@ -32,6 +32,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use less-rails for compiling LESS files
+gem 'less-rails'
+# Use therubyracer for LESS
+gem 'therubyracer'
+
 group :development, :test do
   # Use rspec-rails for testing
   gem 'rspec-rails', '~> 3.0.0'
