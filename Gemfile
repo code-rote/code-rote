@@ -33,6 +33,14 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Use rspec-rails for testing
+  gem 'rspec-rails', '~> 3.0.0'
+
+  # Use factory_girl_rails
+  gem 'factory_girl_rails'
+
+  # Use ffaker for dummy data
+  gem 'ffaker'
 
   # Use dotenv-rails to secure our secret keys
   gem 'dotenv-rails'
@@ -45,5 +53,15 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+group :test do 
+  # Use capybara for BDD 
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+
+end
+
 end
 
