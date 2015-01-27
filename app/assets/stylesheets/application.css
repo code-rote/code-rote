@@ -23,6 +23,9 @@
 
 * prism theme, downloaded from: http://prismjs.com/download.html
 *= require prism/themes/prism-dark.css
+
+* Custom bootstrap-material-design styles.less
+* require app/assets/stylesheets/material-design-custom.less
  */
 
 /*bootstrap custom css*/
