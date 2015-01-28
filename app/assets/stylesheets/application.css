@@ -13,23 +13,25 @@
  *= require_tree .
  *= require_self
 
+
 * bootstrap core css
 *= require bootstrap/dist/css/bootstrap.min.css
 
 
 * bootstrap-material-design  
-*= require bootstrap-material-design/dist/css/material-wfont.min.css
-*= require bootstrap-material-design/dist/css/ripples.min.css
+* require bootstrap-material-design/dist/css/material-wfont.min.css
+* require bootstrap-material-design/dist/css/ripples.min.css
 
 * prism theme, downloaded from: http://prismjs.com/download.html
 *= require prism/themes/prism-dark.css
 
 * Custom bootstrap-material-design styles.less
-* require app/assets/stylesheets/material-design-custom.less
+
  */
 
 /*bootstrap custom css*/
 /* centered columns styles */
+/** require app/assets/stylesheets/material-design-custom.less*/
 .row-centered {
     text-align:center;
 }

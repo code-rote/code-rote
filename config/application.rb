@@ -34,5 +34,6 @@ module CodeRote
     # Config Rails to work with Bower. See link for details:
     ## http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    # config.assets.paths << Rails.root.join('app', 'assets')
   end
 end
