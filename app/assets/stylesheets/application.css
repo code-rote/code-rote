@@ -41,3 +41,7 @@
     /* inline-block space fix */
     margin-right:-4px;
 }
+
+.unmatched-letter{
+  opacity: 0.5;
+}
