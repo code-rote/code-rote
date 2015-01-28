@@ -1,16 +1,109 @@
-<div class="container">
-<h2>Snippet</h2>
-  <div class="row row-centered">
-    <div class="col-sm-12 col-centered">
+<!-- step and code example 1 -->
+<div class="container-fluid">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Step Title: Setup Rails Models</h3>
+        <p class="text-muted">
+          Step Note: To get started building our sample application let's start from the beginning. Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.
+        </p>
+        <div class="text-primary lead">
+          rails new intro_json -T -d postgresql
+          cd intro_json
+          rake db:create
+        </div>
       
-      <pre>
-        <code class="language-javascript">
-        <%= @snippet.snippet %>
-        </code>
-      </pre>
-      <%= link_to 'Show', snippet_path(@snippet.id), class: 'btn btn-primary' %>
-      <%= link_to 'Edit', edit_snippet_path(@snippet.id), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', snippet_path(@snippet.id), method: :delete, class: "btn btn-warning" %>
+      </section>
+    </div>
+    
+    <!-- code model -->
+    <!-- <div class="col-sm-5">
+      <section>
+        <pre>
+          <code class="language-javascript">
+            <div id="code-highlighted"></div>
+          </code>
+        </pre>
+      </section>
+    </div> -->
+    <!-- /code model -->
+    
+    <!-- type-along snippet -->
+    <div class="col-sm-8">
+      <section>
+        <pre>
+          <code>
+            <div id="code-entry-id-"></div>
+          </code>
+        </pre>
+      </section>
+    </div>
+    
+    <!-- action area -->
+    <div class="col-sm-4">
+      <section>
+        <form class="move">
+          <fieldset>
+            <!-- <legend>Controls</legend> -->
+            <!-- start button -->
+            <p id="start-snippet" class="btn btn-primary btn-raised btn-lg btn-block">Start</p>
+            <!-- /start button -->
+
+            <!-- timer next previous links -->
+            <div class="row">
+              
+              <div class="col-sm-4">
+                <span id="snippet-timer" class="btn btn-default btn-flat btn-link btn-block">
+                  <i class="icon mdi-action-alarm"></i> :35
+                </span>
+              </div>
+
+              <div class="col-sm-4">
+                <%= link_to 'Next', snippet_path(@snippet.id+1), class: 'btn btn-default btn-flat btn-link btn-block' %>
+              </div>
+              <div class="col-sm-4">
+                <%= link_to 'Previous', snippet_path(@snippet.id-1), class: 'btn btn-default btn-flat btn-link btn-block' %>
+              </div>
+
+            </div>
+            <!-- /timer next previous links -->
+
+            <hr>
+            
+            <!-- admin links to edit and delete -->
+            <div class="row">
+              <div class="col-sm-6">
+                <%= link_to 'Edit', edit_snippet_path(@snippet.id), class: 'btn btn-primary btn-flat btn-block' %>
+              </div>
+              <div class="col-sm-6">
+                <%= link_to 'Delete', snippet_path(@snippet.id), method: :delete, class: "btn btn-danger btn-flat btn-block" %>
+              </div>
+            </div>
+            <!-- /admin links to edit and delete -->
+          </fieldset>
+        </form>
+      </section>
+    </div>
+    <!-- /action area -->
+    <hr>
+  </div>
+
+<hr>
+
+  <div class="row">
+    <div class="col-sm-12 col-centered">
+      <p>
+        <pre>
+          <code class="language-javascript">
+          <%= @snippet.snippet %>
+          </code>
+        </pre>
+      </p>
+      
     </div>
   </div>
+
 </div>
+<!-- /fluid container

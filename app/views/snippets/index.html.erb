@@ -1,42 +1,71 @@
 <div class="container">
   <h1>Snippets and Steps</h1>
-  <% @steps.each do |step| %>
-    <div class="row row-centered">
-      <div class="col-sm-12 col-centered panel">
 
-          <div>
-            <h3><%= step.name %></h3>
-          </div>
-          <div>
-            <p><%= step.description %></p>
-          </div>
-          <div>
-            <%= link_to 'Show', step_path(step.id), class: 'btn btn-primary' %>
-            <%= link_to 'Edit', edit_step_path(step.id), class: 'btn btn-primary' %>
-            <%= link_to 'Delete', step_path(step.id), method: :delete, class: "btn btn-warning" %>
-          </div>
-
-        </div>
-      </div>
-  <% end %>
-</div>
-
-<div class="container">
-<h2>Snippets</h2>
-<% @snippets.each do |snippet| %>
-  <div class="row row-centered">
-    <div class="col-sm-12 col-centered">
+  <!-- step and code example 1 -->
+  <div class="container">
+    <div class="row">
       
-      <pre>
-        <code class="language-javascript">
-        <%= snippet.snippet %>
-        </code>
-      </pre>
-      <%= link_to 'Show', snippet_path(snippet.id), class: 'btn btn-primary' %>
-      <%= link_to 'Edit', edit_snippet_path(snippet.id), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', snippet_path(snippet.id), method: :delete, class: "btn btn-warning" %>
+      <div class="col-sm-12">
+        <section class="notes">
+          
+          <h3>Step Title: Setup Rails Models</h3>
+          <p class="text-muted">
+            Step Note: To get started building our sample application let's start from the beginning. Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.
+          </p>
+          <div class="text-primary lead">
+            rails new intro_json -T -d postgresql
+            cd intro_json
+            rake db:create
+          </div>
+        
+        </section>
+      </div>
+      
+      <!-- code model -->
+      <!-- <div class="col-sm-5">
+        <section>
+          <pre>
+            <code class="language-javascript">
+              <div id="code-highlighted"></div>
+            </code>
+          </pre>
+        </section>
+      </div> -->
+      <!-- /code model -->
+      
+      <!-- type-along snippet -->
+      <div class="col-sm-8">
+        <section>
+          <pre>
+            <code>
+              <div id="code-entry-id-"></div>
+            </code>
+          </pre>
+        </section>
+      </div>
+      
+      <!-- action area -->
+      <div class="col-sm-2">
+        <section>
+          <form class="move">
+            <fieldset>
+              <legend>Controls</legend>
+              <p id="start-snippet">Start</p>
+              <% @snippet.each do |snippet| %>
+                <p><a href="/snippets/<%= snippet.id+1 %>">Next Snippet</a></p>
+                <p><a href="/snippets/<%= snippet.id-1 %>">Previous Snippet</a></p>
+              <% end %>
+              <p>Timer: <span id="snippet-timer">:35</span></p>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+      <!-- /action area -->
+
     </div>
   </div>
-  <hr>
-<% end %>
-</div>
+  <!-- /step and code example 1 -->
+
+  <% @snippet.each do |snippet| %>
+    <%= snippet.snippet %>
+  <% end %>

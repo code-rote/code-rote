@@ -1,6 +1,6 @@
 class SnippetsController < ApplicationController
   def index
-    @snippets = Snippet.all
+    @snippet = Snippet.all
     @steps = Step.all
   end
 
