@@ -9,7 +9,7 @@
         
         <h3>Setup:</h3>
         <p class="text-muted">
-          Let's start by making a new directory to save our project in and moving into that. "cd ~" will set your home directory to your current directory. We're using the name project1, but your directory can be named anything you like. When you type "ls" it will "list stuff", showing you the files in your directory. If you have any old apps named blog in there, you should remove them by typing in your terminal: rm -rf blog, before going on to the next step.  
+          Let's start by making a new directory to save our project in and moving into that. "cd ~" will set your home directory to your current directory. We're using the name project1, but your directory can be named anything you like. When you type "ls" it will "list stuff", showing you the files in your directory. If you have any old apps named blog in there, you should remove them by typing in your terminal: "rm -rf blog", before going on to the next step.  
         </p>
         <div class="text-primary lead">
           IN TERMINAL
@@ -50,7 +50,7 @@
         
         <h3>New Rails:</h3>
         <p class="text-muted">
-          <b>Let's create a new rails project along with a database.</b> The "-T" tells rails not to install its default testing suite "minitest" (don't worry, will add another testing suite) and the "-d postgresql" tells rails to configure its self to use the database postgres. When you type cd blog, you're moving into your new blog directory. The rake db instruction, actually creates your new database.
+          Let's create a new rails project along with a database. The "-T" tells rails not to install its default testing suite <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/minitest/unit/rdoc/MiniTest/Assertions.html" target="_blank">MiniTest</a> (don't worry, will add another testing suite) and the "-d postgresql" tells rails to configure its self to use the database <a href="http://www.postgresql.org/about/" target="-blank">postgres</a>. When you type cd blog, you're moving into your new blog directory. The rake db instruction, actually creates your new database.
         </p>
         <div class="text-primary lead">IN TERMINAL</div>
         <div>
@@ -66,8 +66,12 @@
     <!-- additional resources and links -->
     <div class="col-sm-12">
       <section class="additional-resources">
+        <h5>Additional Resources</h5>
         <p>
-          
+          "MiniTest" (http://www.ruby-doc.org/stdlib-1.9.3/libdoc/minitest/unit/rdoc/MiniTest/Assertions.html)
+        </p>
+        <p>
+          "PostgreSQL" (http://www.postgresql.org)
         </p>
       </section>
     </div>
@@ -87,7 +91,7 @@
         
         <h3>Run your blog locally:</h3>
         <p class="text-muted">
-          Let's make sure rails is working. After starting your local server (s like we instruct or you can use the word start, but why would you waste time?). Now point your browser to http://localhost:3000 . You should see rails' "Welcome aboard" page. When you're ready to kill your server and get back to work, hit "control" and the letter "c". This command closes or cancels terminal programs. Your server will continue to run until you tell it to stop, so don't forget to type "control c" in your terminal to stop it.
+          Let's make sure rails is working. After starting your local server (s like we instruct or you can use the word start, but why would you waste time?). Now point your browser to http://localhost:3000 . You should see rails' "Welcome aboard" page. When you're ready to kill your server and get back to work, hit "control" and the letter "c". This command closes or cancels terminal programs. Your server will continue to run until you tell it to stop, so don't forget to type "control c" in your terminal to stop it!
         </p>
 
         <div class="text-primary lead">IN TERMINAL</div>
@@ -123,7 +127,7 @@
         
         <h3>Adding a project to a git repo:</h3>
         <p class="text-muted">
-          You need to add your project to git for revision control and because <i>Heroku</i>, your app server uses it. Initialize a new directory with init. Status, will tell us everything git sees as new, modified or missing.
+          You need to add your project to git for revision control and because <i>Heroku</i>, the server you'll use to host your blog on, uses it. Initialize a new directory with init. Status, will tell us everything git sees as new, modified or missing.
           Add, tells git that you want to add the current directory and everything under it. "." keeps files you've deleted from being included. After your initial commit, you should use "git add -A" to include your deleted files, as this insures that git is a true "revision control system". The final step instructs git to actually do everything you've asked git to do. Don't forget to add "-m" and a message describing what you've done or git will put you into a text editor to make you write a message. To exit the editor rails puts you in and try your add again, press ":q" and then "enter". 
         </p>
 
