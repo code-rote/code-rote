@@ -28,16 +28,29 @@
 //
 //= require keypress/keypress-2.1.0.min.js
 
-var snippet;
+var a_snippet;
+var run_once = false;
 var SM;
 (function(window, document, undefined) {
-  $(document).ready(function(){
+  $(document).on("ready page:load",function(){
+    var snippetId = window.location.pathname.split("/").pop();
+    if (run_once) {
+    $.get('/snippets/'+ snippetId +'.json', function(data){
+      a_snippet = new StringMatcher(data.tool);
+      console.log(a_snippet);
+    });
+    run_once = false;
+}
+
+run_once = true;
+   
 
   // string matching function
   function StringMatcher(str){
+    console.log("\n\n\n\n\n\n\n\n\n\n CREATED STRINGMATCHER \n\n\n")
         var charSeq = [];
         var $code = $("#code-entry-id-");
-        var $codeHighlighted = $("#code-highlighted")
+        // var $codeHighlighted = $("#code-highlighted")
         for (var i = 0; i < str.length; i++) {
           (function(k){
             var $el = $("<span class='unmatched-letter'>" + str[k] + "</span>");
@@ -46,6 +59,8 @@ var SM;
             var node = { el: $el, char: char, charCode: charCode};
             charSeq.push(node);
             $code.append(node.el);
+            console.log("\n\n\n"+$code+"\n\n\n");
+            //debugger;
             // $codeHighlighted.append(node.el);
           })(i);
         };
@@ -97,7 +112,7 @@ var SM;
   };
 
   // snippet is the string variable
-  snippet = new StringMatcher("rails\rcd intro_json\rrake db:create");
+  // snippet = new StringMatcher("rails\rcd intro_json\rrake db:create");
   // console.log(snippet);
 
 
@@ -165,13 +180,13 @@ $(document).keypress(function(event){
     console.log(char);
 
   // do simple char match and console.log
-  if (charCode == snippet.getElement().charCode){
+  if (charCode == a_snippet.getElement().charCode){
     console.log("MATCH");
     // toggling the matched elements class
-    snippet.getElement().el.toggleClass("unmatched-letter");
+    a_snippet.getElement().el.toggleClass("unmatched-letter");
 
     // check if the current element is the last Element of the 
-    if (snippet.endOfStringMatch()){
+    if (a_snippet.endOfStringMatch()){
 
     };
     // snippet.getElement().el.endOfStringMatch();
@@ -181,7 +196,7 @@ $(document).keypress(function(event){
     // pass matched element into Prism for highlighting
     // http://schier.co/blog/2013/01/07/how-to-re-run-prismjs-on-ajax-content.html
     // Prism.highlightElement($(snippet.getElement().el)[0]);
-    snippet.updateIndex();
+    a_snippet.updateIndex();
 
   } else {
      // do not go to next letter 

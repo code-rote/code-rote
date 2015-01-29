@@ -3,33 +3,31 @@
   <div class="row">
     
     <div class="col-sm-12">
-      <section class="notes">
+      <section class="panel notes">
         
-        <h3>Step Title: Setup Rails Models</h3>
-        <p class="text-muted">
-          Step Note: To get started building our sample application let's start from the beginning. Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.
+        <!-- snippet title -->
+        <h1 class="text-primary lead">Step Title: <%= @snippet.name %></h1>
+
+        <!-- snippet tags -->
+        <p>
+          <span class="btn btn-flat btn-link btn-xs">
+            <small>Language: <%= @snippet.core_language %></small>
+          </span>
+          <span class="btn btn-flat btn-link btn-flat btn-xs">
+            <small>Tool: <%= @snippet.tool %></small>
+          </span>
         </p>
-        <div class="text-primary lead">
-          rails new intro_json -T -d postgresql
-          cd intro_json
-          rake db:create
+        
+        <!-- snippet description -->
+        <div class="well infobox">
+          <p class="text-muted">
+          <%= @snippet.description %>
+        </p>
         </div>
-      
+
       </section>
     </div>
-    
-    <!-- code model -->
-    <!-- <div class="col-sm-5">
-      <section>
-        <pre>
-          <code class="language-javascript">
-            <div id="code-highlighted"></div>
-          </code>
-        </pre>
-      </section>
-    </div> -->
-    <!-- /code model -->
-    
+
     <!-- type-along snippet -->
     <div class="col-sm-8">
       <section>
@@ -47,37 +45,36 @@
         <form class="move">
           <fieldset>
             <!-- <legend>Controls</legend> -->
-            <!-- start button -->
-            <p id="start-snippet" class="btn btn-primary btn-raised btn-lg btn-block">Start</p>
-            <!-- /start button -->
 
             <!-- timer next previous links -->
             <div class="row">
               
-              <div class="col-sm-4">
+              <!-- start button -->
+              <p id="start-snippet" class="btn btn-primary btn-raised btn-lg btn-block">Start</p>
+              <!-- /start button -->
+              
+              <!-- timer next previous links -->
+              <div class="btn-group btn-group-justified">
                 <span id="snippet-timer" class="btn btn-default btn-flat btn-link btn-block">
                   <i class="icon mdi-action-alarm"></i> :35
                 </span>
-              </div>
-
-              <div class="col-sm-4">
                 <%= link_to 'Next', snippet_path(@snippet.id+1), class: 'btn btn-default btn-flat btn-link btn-block' %>
+                <%= link_to 'Previous', '/snippets/' + (@snippet.id-1).to_s, class: 'btn btn-default btn-flat btn-link btn-block' %>
               </div>
-              <div class="col-sm-4">
-                <%= link_to 'Previous', snippet_path(@snippet.id-1), class: 'btn btn-default btn-flat btn-link btn-block' %>
-              </div>
-
+            
             </div>
             <!-- /timer next previous links -->
 
-            <hr>
             
             <!-- admin links to edit and delete -->
             <div class="row">
-              <div class="col-sm-6">
-                <%= link_to 'Edit', edit_snippet_path(@snippet.id), class: 'btn btn-primary btn-flat btn-block' %>
+              <div class="col-sm-4">
+                <%= link_to 'New', new_snippet_path, class: 'btn btn-primary btn-flat btn-block' %>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-4">
+                <%= link_to 'Edit', edit_snippet_path(@snippet.id), class: 'btn btn-info btn-flat btn-block' %>
+              </div>
+              <div class="col-sm-4">
                 <%= link_to 'Delete', snippet_path(@snippet.id), method: :delete, class: "btn btn-danger btn-flat btn-block" %>
               </div>
             </div>
@@ -89,21 +86,25 @@
     <!-- /action area -->
     <hr>
   </div>
+</div>
+<!-- /fluid container-->
 
-<hr>
+
 
   <div class="row">
     <div class="col-sm-12 col-centered">
-      <p>
+    <hr>
+    <!-- code model -->
+    <div class="col-sm-12">
+      <section>
         <pre>
           <code class="language-javascript">
-          <%= @snippet.snippet %>
+            <div id="code-highlighted"><%# @snippet.snippet %></div>
           </code>
         </pre>
-      </p>
-      
+      </section>
+    </div>
+  
     </div>
   </div>
 
-</div>
-<!-- /fluid container

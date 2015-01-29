@@ -1,6 +1,11 @@
 <%= form_for snippet do |f| %>
   <div class="inputs">
+    <%= f.text_field :name, placeholder: 'name', :cols => "10", :rows => "25", class: 'form-control floating-label' %>
+    <%= f.text_field :core_language, placeholder: 'core_language', :cols => "10", :rows => "25", class: 'form-control floating-label' %>
+    <%= f.text_field :tool, placeholder: 'tool', :cols => "10", :rows => "25", class: 'form-control floating-label' %>
+    <%= f.text_area :description, placeholder: 'description', :cols => "10", :rows => "25", class: 'form-control floating-label' %>
     <%= f.text_area :snippet, placeholder: 'Snippet', :cols => "10", :rows => "25", class: 'form-control floating-label' %>
+    
   </div>
   
   <%= f.submit 'Save Snippet' , class: 'btn btn-success' %>
