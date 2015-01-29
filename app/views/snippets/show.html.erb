@@ -1,4 +1,4 @@
-<!-- step and code example 1 -->
+<!-- step and code -->
 <div class="container-fluid">
   <div class="row">
     
@@ -21,7 +21,7 @@
         <!-- snippet description -->
         <div class="well infobox">
           <p class="text-muted">
-          <%= @snippet.description %>
+          <%= @snippet.description.html_safe %>
         </p>
         </div>
 
@@ -99,7 +99,7 @@
       <section>
         <pre>
           <code class="language-javascript">
-            <div id="code-highlighted"><%# @snippet.snippet %></div>
+            <div id="code-highlighted"><%= @snippet.snippet %></div>
           </code>
         </pre>
       </section>
