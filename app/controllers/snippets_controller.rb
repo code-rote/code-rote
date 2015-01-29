@@ -35,7 +35,13 @@ class SnippetsController < ApplicationController
 
     private
       def snippet_params
-        params.require(:snippet).permit(:name, :description, :core_language, :tool, :snippet)
+        params.require(:snippet).permit(:name, 
+                                        :description, 
+                                        :core_language, 
+                                        :tool, 
+                                        :snippet,
+                                        :step_num,
+                                        :code_term)
       end
 
       def find_snippet
