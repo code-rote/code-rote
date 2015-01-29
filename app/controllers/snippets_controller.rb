@@ -15,6 +15,10 @@ class SnippetsController < ApplicationController
 
   def show
     find_snippet
+    respond_to do |format|
+      format.html
+      format.json {render json: find_snippet }
+    end
   end
 
   def edit
@@ -31,7 +35,7 @@ class SnippetsController < ApplicationController
 
     private
       def snippet_params
-        params.require(:snippet).permit(:snippet)
+        params.require(:snippet).permit(:name, :description, :core_language, :tool, :snippet)
       end
 
       def find_snippet
