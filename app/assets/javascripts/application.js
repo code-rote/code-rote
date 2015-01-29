@@ -36,7 +36,7 @@ var SM;
     var snippetId = window.location.pathname.split("/").pop();
     if (run_once) {
     $.get('/snippets/'+ snippetId +'.json', function(data){
-      a_snippet = new StringMatcher(data.tool);
+      a_snippet = new StringMatcher(data.snippet);
       console.log(a_snippet);
     });
     run_once = false;
