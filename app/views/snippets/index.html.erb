@@ -1,14 +1,10 @@
 <div class="container">
   <h1>Snippets and Steps</h1>
 
-  <!-- step and code example 1 -->
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-sm-12">
-        <section class="notes">
-          
-          <h3>Step Title: Setup Rails Models</h3>
+  <div class="card">
+    <div class="row ">
+      <div class="card-body">
+        <h3>Step Title: Setup Rails Models</h3>
           <p class="text-muted">
             Step Note: To get started building our sample application let's start from the beginning. Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.Step Note: To get started building our sample application let's start from the beginning.
           </p>
@@ -17,55 +13,9 @@
             cd intro_json
             rake db:create
           </div>
-        
-        </section>
       </div>
-      
-      <!-- code model -->
-      <!-- <div class="col-sm-5">
-        <section>
-          <pre>
-            <code class="language-javascript">
-              <div id="code-highlighted"></div>
-            </code>
-          </pre>
-        </section>
-      </div> -->
-      <!-- /code model -->
-      
-      <!-- type-along snippet -->
-      <div class="col-sm-8">
-        <section>
-          <pre>
-            <code>
-              <div id="code-entry-id-"></div>
-            </code>
-          </pre>
-        </section>
-      </div>
-      
-      <!-- action area -->
-      <div class="col-sm-2">
-        <section>
-          <form class="move">
-            <fieldset>
-              <legend>Controls</legend>
-              <p id="start-snippet">Start</p>
-              <% @snippet.each do |snippet| %>
-                <p><a href="/snippets/<%= snippet.id+1 %>">Next Snippet</a></p>
-                <p><a href="/snippets/<%= snippet.id-1 %>">Previous Snippet</a></p>
-              <% end %>
-              <p>Timer: <span id="snippet-timer">:35</span></p>
-            </fieldset>
-          </form>
-        </section>
-      </div>
-      <!-- /action area -->
 
     </div>
   </div>
-  <!-- /step and code example 1 -->
-
-  <% @snippet.each do |snippet| %>
-    <%= snippet.snippet %>
-  <% end %>
+  <button class="btn btn-primary btn-fab btn-raised mdi-action-grade"></button>
+</div>
