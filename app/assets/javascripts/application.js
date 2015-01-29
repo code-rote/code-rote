@@ -16,14 +16,15 @@
 //= require_tree .
 
 // bootstrap core js
-//= require bootstrap/dist/js/bootstrap.min.js
+// require bootstrap/dist/js/bootstrap.min.js
 
 // bootstrap-material-design
-//= require bootstrap-material-design/dist/js/material.min.js
-//= require bootstrap-material-design/dist/js/ripples.min.js
+// require bootstrap-material-design/dist/js/material.min.js
+// require bootstrap-material-design/dist/js/material.min.js.map
+// require bootstrap-material-design/dist/js/ripples.min.js
 
 // editArea real-time syntax highlighter for a text area
-//= require EditArea/edit_area/edit_area_full.js
+// require EditArea/edit_area/edit_area_full.js
 
 //
 //= require keypress/keypress-2.1.0.min.js
@@ -34,15 +35,14 @@ var SM;
 (function(window, document, undefined) {
   $(document).on("ready page:load",function(){
     var snippetId = window.location.pathname.split("/").pop();
-    if (run_once) {
+    console.log("a_snippet", a_snippet);
+    
+
     $.get('/snippets/'+ snippetId +'.json', function(data){
       a_snippet = new StringMatcher(data.snippet);
       console.log(a_snippet);
     });
-    run_once = false;
-}
 
-run_once = true;
    
 
   // string matching function
@@ -118,7 +118,7 @@ run_once = true;
 
 // Scroll Magic
       // init controller
-      var controller = new ScrollMagic();
+      //var controller = new ScrollMagic();
     
 
 });
