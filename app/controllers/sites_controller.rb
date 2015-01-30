@@ -8,4 +8,7 @@ class SitesController < ApplicationController
 
   def contact
   end
+
+  def project
+  end
 end
