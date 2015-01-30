@@ -1,2 +1,288 @@
-<h1>Steps#index</h1>
-<p>Find me in app/views/steps/index.html.erb</p>
+<h1>Notes Compiled</h1>
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Setup:</h3>
+        <p class="text-muted">
+          Let's start by making a new directory to save our project in, called project1, and move into that. "cd ~" will set your home directory to your current directory. The "cd" stands for change directory and you'll use this often. From your home directory you'll be making a new project directory. For our example we'll be using the name project1. When you type "ls" it means "list stuff", and will list all the files in your directory. Since we'll be using the folder name blog, <b>if you have any old apps named blog in there, you need to remove them by typing in your terminal: "rm -rf blog", <u>before</u> going on to the next step.</b> The "rm -rf (folder name)" is a command worth breaking down, so let's take a look. "rm" stands for remove and "-rf" is really two separate commands and can be written as "-r -f", but because we're coders, we'll link these two methods. Here the "r" stands for recursive and targets all those files included in your blog folder. The "f" stands for force, because git only allows us to remove empty folders and would throw an error when we tried to remove this folder filled with files. So we're forcing git to remove all files associated with any project named blog stored in your project1 directory. <e>WARNING</e>: "rf" is very powerful and can be dangerous, so make sure you use it only to target folders you are sure you want removed!
+        </p>
+        <div class="text-primary lead">
+          IN TERMINAL
+        </div>
+        <div>
+          cd ~
+          mkdir project1
+          cd project1
+          ls
+        </div>
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <p>
+          
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+
+<hr>
+
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>New Rails:</h3>
+        <p class="text-muted">
+          Let's create a new rails project along with a database. "rails new" creates just that and when we add "blog" to that command, we're saying we want the folder to be called blog. The "-T" tells rails not to install its default testing suite <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/minitest/unit/rdoc/MiniTest/Assertions.html" target="_blank">MiniTest</a> (don't worry, will add another testing suite) and the "-d postgresql" tells rails to configure itself to use the database <a href="http://www.postgresql.org/about/" target="-blank">postgres</a>. When you type "cd blog", you're changing directories (see, you're already using this command again) into your new blog directory. The "rake db:create" instruction, actually creates your new database.
+        </p>
+        <div class="text-primary lead">IN TERMINAL</div>
+        <div>
+          rails new blog -T -d postgresql
+          cd blog
+          rake db:create
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <p>
+        <h5>Additional Resources</h5>
+        </p>
+        <p>
+          MiniTest: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/minitest/unit/rdoc/MiniTest/Assertions.html
+          <br>
+          PostgreSQL: http://www.postgresql.org
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+<hr>
+
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Complete your setup in your text editor:</h3>
+        <p class="text-muted">
+          You now need to open your new blog folder as a project in your text editor. If you open <a href="http://www.sublimetext.com/" target="-blank">Sublime Text</a>, find the Project heading at the top of the page. Click on the Project menu and then look toward the bottom for "Add Folder to Project...", click on that and then search for your blog folder from the file picker that opens. If everything worked, you should now see all your blog folders that rails made for you on the left.
+        </p>
+
+        <div class="text-primary lead">IN SUBLIME</div>
+
+        <div>
+          Open Sublime Text
+          Click on Project dropdown
+          Click on Add Folder to Project...
+          Select blog from file picker
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <p>
+        <h5>Additional Resources</h5>
+        </p>
+        <p>
+         Sublime Text: http://www.sublimetext.com/ 
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Run your blog locally:</h3>
+        <p class="text-muted">
+          Let's make sure rails is working. After starting your local server (s like we instruct or you can use the word start, but why would you waste time typing 4 extra characters?), now point your browser to http://localhost:3000 . You should see rails' "Welcome aboard" page. When you're ready to kill your server and get back to work, hit "control" and the letter "c". This command closes or cancels terminal programs. Your server will continue to run until you tell it to stop, so don't forget to type "control c" in your terminal to stop it!
+        </p>
+
+        <div class="text-primary lead">IN TERMINAL</div>
+
+        <div>
+          rails s
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <p>
+          
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+<hr>
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Adding a project to a git repo:</h3>
+        <p class="text-muted">
+          You need to add your project to git for revision control and because <a href="https://www.heroku.com/home" taget="-blank"<i>Heroku</i></a>, the server you'll use to host your blog on, uses it. Initialize a new directory on git with "init". "status", will tell us everything git sees as new, modified or missing. "add", tells git that you want to add the current directory and everything under it. "." keeps files you've deleted from being included. After your initial commit, you should use "git add -A", the "-A" means all. This command includes your deleted files, as this insures that git is a true "revision control system". The final step instructs git to actually do everything you've asked git to do. Don't forget to add "-m" and a message describing what you've done or git will put you into a default text editor until you write a message. To exit out of this default text editor and try your "commit" again, press ":q" and then "enter". When you try your add again, <b>don't forget to add your message in quotes!</b>
+        </p>
+
+        <div class="text-primary lead">IN TERMINAL</div>
+
+        <div>
+          git init
+          git status
+          git add .
+          git commit -m "Initial commit with 'out of the box' rails."
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <h5>Additional Resources</h5>
+        <p>
+          Heroku: https://www.heroku.com/home
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+<hr>
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Open the project with Sublime:</h3>
+        <p class="text-muted">
+          Let's go back to <a href="http://www.sublimetext.com/" target="-blank">Sublime</a> by opening it through your terminal. Make sure you're in the correct directory, "cd blog" will put you there quickly and then open <a href="http://www.sublimetext.com/" target="-blank">sublime</a> with the shortcut "subl ."
+        </p>
+
+        <div class="text-primary lead">IN TERMINAL</div>
+
+        <div>
+          cd blog
+          subl .
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <h5>Additional Resources</h5>
+        <p>
+          Sublime: http://www.sublimetext.com/
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+<hr>
+
+<!-- start of step -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <section class="notes">
+        
+        <h3>Gems:</h3>
+        <p class="text-muted">
+          Let's make sure we have the gems we need. Open your Gemfile (you'll find it towards the bottom of the list of files on the left side of sublime.)
+        </p>
+
+        <div class="text-primary lead">IN SUBLIME</div>
+
+        <div>
+          cd blog
+          subl .
+        </div>
+      
+      </section>
+    </div>
+    
+    
+    <!-- additional resources and links -->
+    <div class="col-sm-12">
+      <section class="additional-resources">
+        <p>
+          
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<!-- end of step -->
+
+
+<hr>
+
+
+
+
+
+

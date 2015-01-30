@@ -5,21 +5,87 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Twitter Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design for Bootstrap -->
+    <%= stylesheet_link_tag    'bootstrap-material-design/dist/css/material-wfont.min.css', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'bootstrap-material-design/dist/css/ripples.min.css', media: 'all', 'data-turbolinks-track' => true %>
+ 
+    <!-- Dropdown.js -->
+    <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="row">
-  <div class="col-sm-12">
-    <%= render partial: 'layouts/navbar' %>
-    
-    <div class="row centered">
-      <div class="col-sm-12">
-        <%= yield %>
+  <%= render partial: 'layouts/navbar' %>
+  <div class="container">
+    <%= yield %> 
+  </div>
+  <%= javascript_include_tag 'prism/prism.js' %>
+  <%= javascript_include_tag 'prism/components/prism-javascript.min.js' %>
+
+
+  <!-- Twitter Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Material Design for Bootstrap -->
+    <%= javascript_include_tag "bootstrap-material-design/dist/js/material.min.js", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "bootstrap-material-design/dist/js/ripples.min.js", "data-turbolinks-track" => true %>
+    <script>
+      $.material.init();
+    </script>
+
+
+    <!-- Sliders -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+    <script>
+      $(function() {
+        $.material.init();
+        // $(".shor").noUiSlider({
+        //   start: 40,
+        //   connect: "lower",
+        //   range: {
+        //     min: 0,
+        //     max: 100
+        //   }
+        // });
+        // $(".svert").noUiSlider({
+        //   orientation: "vertical",
+        //   start: 40,
+        //   connect: "lower",
+        //   range: {
+        //     min: 0,
+        //     max: 100
+        //   }
+        // });
+      });
+    </script>
+
+    <!-- Dropdown.js -->
+    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+    <script>
+      $("#dropdown-menu select").dropdown();
+    </script>
+
+   
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="page-footer">
+        <hr>
+        <div class=" btn-group-justified">
+            <a href="/about" class="btn btn-material-teal btn-flat ">about code-rote</a>
+            <a href="/project" class="btn btn-material-teal btn-flat ">project overview</a>
+            <a href="/contact" class="btn btn-material-teal btn-flat  ">see our team</a>
+        </div>
       </div>
     </div>
-    
-  </div>
-</div>
-
-
+  </footer> 
 </body>
 </html>

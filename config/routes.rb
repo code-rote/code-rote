@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   # site routes
   get '/', to: 'sites#index'
-  get '/about', to: 'sites#about'
-  get '/contact', to: 'sites#contact'
+  get '/about', to: 'sites#about', as: 'about'
+  get '/contact', to: 'sites#contact', as: 'contact'
+  get '/project', to: 'sites#project', as: 'project'
 
   # session routes
   get '/signup', to: 'users#new', as: 'signup'
@@ -16,5 +17,12 @@ Rails.application.routes.draw do
 
   # user routes
   resources :users, except: [:index, :new]
-  get '/profile', to: 'users#profile'
+  get '/profile', to: 'users#profile', as: 'profile'
+
+  # step routes
+  resources :steps
+
+  # snippet routes
+  resources :snippets
+
 end

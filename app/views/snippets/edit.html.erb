@@ -1,2 +1,15 @@
-<h1>Snippets#edit</h1>
-<p>Find me in app/views/snippets/edit.html.erb</p>
+<div class="container">
+<h1>Edit Snippet</h1>
+  <div class="row">
+    <div class="col-sm-10 col-centered">
+      <%= render partial: 'snippets/snippet_form', locals: {snippet: @snippet }%>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <code class="language-javascript">
+    var angelo = function(test){}
+  </code>
+</pre>
+<%= javascript_include_tag 'prism/prism.js' %>
