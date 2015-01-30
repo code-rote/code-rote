@@ -51,3 +51,15 @@
   text-align: center; 
   width: auto
 }
+
+.page-footer{
+  top: 100px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.index-play-button{
+  vertical-align: middle;
+  height: inherit;
+  margin-left: .1em;
+}
