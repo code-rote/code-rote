@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/', to: 'sites#index'
   get '/about', to: 'sites#about', as: 'about'
   get '/contact', to: 'sites#contact', as: 'contact'
+  get '/project', to: 'sites#project', as: 'project'
 
   # session routes
   get '/signup', to: 'users#new', as: 'signup'
