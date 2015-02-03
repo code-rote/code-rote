@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
 
   validates :password_confirmation,
             presence: true,
-            # length: {minimum: 8},
-            # password must not be al lowercase letters
+            length: {minimum: 8},
+            # password must not be all lowercase letters
             # format: {without: /\A[a-z]+\z/},
             if: :password_required?
 

@@ -15,7 +15,6 @@ feature 'Sign up' do
     fill_in 'password', :with => 'changeme'
     fill_in 'user_password_confirmation', :with => 'changeme'
     click_button 'signup'
-    expect(page).to have_css '.current-user-profile', 'Course List'
-    expect(page).to have_content 'Welcome'
+    expect(page).to have_content 'Please Signin'
   end 
 end

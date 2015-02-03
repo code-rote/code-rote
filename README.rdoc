@@ -26,9 +26,13 @@ DESCRIPTION: Helping coders learn faster by gamifying learning by Rote
 
 
 ### PROJECT DOCS ###
-  >* [Wireframes]()
-  >* [User Stories]()
-  >* [ERD]()
+####Wireframes
+  > ![Wireframes - gameboard](https://github.com/code-rote/project_resources/blob/dev/wireframes/code-rote-mockup-gameboard-v1.png)
+  > ![Wireframes - profile](https://github.com/code-rote/project_resources/blob/dev/wireframes/code-rote-mockup-user_profile-v1.png)
+
+####ERD
+  >![ERD](https://github.com/code-rote/project_resources/blob/dev/database/ERD.png)
+  >* [User Stories](https://docs.google.com/spreadsheets/d/1Bv6bIiO8oW7QGTOXsY0G7ghfAOOCWqzF0Leie396Y9A/pubhtml?gid=284255804&single=true)
   >* [Inspiration and Ideation of the MVP]()
 
 ### PROJECT LINKS ###
@@ -37,9 +41,13 @@ DESCRIPTION: Helping coders learn faster by gamifying learning by Rote
 
 
 ### APIS USED ###
-Keypress.js
-?
+  > Prism.js
 
+### Front-end Dependencies ###  
+  > Keypress.js
+  > Bootstrap 3
+  > Bootstrap Material Design
+  > Bower
 
 ### SCOPE ###
 
@@ -52,9 +60,9 @@ Keypress.js
   >* multi-player
 
 ### CONTRIBUTORS ###
-  >* [Angelo Cisneros]()
-  >* [Emannuel Navarez]()
-  >* [Laurie Aoloui]()
+  >* [Angelo Cisneros](https://github.com/el-besto)
+  >* [Emannuel Navarez](https://github.com/emmyisawizard)
+  >* [Laurie Alaoui](https://github.com/lalaouil)
 
 
 

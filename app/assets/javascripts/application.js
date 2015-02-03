@@ -27,7 +27,7 @@
 // require EditArea/edit_area/edit_area_full.js
 
 //
-//= require keypress/keypress-2.1.0.min.js
+// require keypress/keypress-2.1.0.min.js
 
 var a_snippet;
 var run_once = false;
