@@ -27,11 +27,11 @@ class StepsController < ApplicationController
   end
 
       private
-        def step_params
-          params.require(:step).permit(:name, :description)
-        end
+          def step_params
+              params.require(:step).permit(:name, :description)
+          end
 
-        def find_step
-          @step = Step.find_by({id: params[:id]})
-        end
+          def find_step
+              @step = Step.find_by({id: params[:id]})
+          end
 end

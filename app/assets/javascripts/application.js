@@ -26,7 +26,7 @@
 // editArea real-time syntax highlighter for a text area
 // require EditArea/edit_area/edit_area_full.js
 
-//
+// keypress.js 
 // require keypress/keypress-2.1.0.min.js
 
 var a_snippet;

@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   def index
-    @snippet = Snippet.all
+      @snippet = Snippet.all
   end
 
   def about
