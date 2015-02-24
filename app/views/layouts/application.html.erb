@@ -8,16 +8,12 @@
 
   <!-- Mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Twitter Bootstrap -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Material Design for Bootstrap -->
-    <%= stylesheet_link_tag    'bootstrap-material-design/dist/css/material-wfont.min.css', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    'bootstrap-material-design/dist/css/ripples.min.css', media: 'all', 'data-turbolinks-track' => true %>
- 
-    <!-- Dropdown.js -->
-    <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+      <!-- Dropdown.js -->
+      <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -26,32 +22,29 @@
   <div class="container">
     <%= yield %> 
   </div>
-  
-  <%= javascript_include_tag 'prism/prism.js' %>
-  <%= javascript_include_tag 'prism/components/prism-javascript.min.js' %>
 
 
-  <!-- Twitter Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Twitter Bootstrap -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
 
     <!-- Material Design for Bootstrap -->
-    <%= javascript_include_tag "bootstrap-material-design/dist/js/material.min.js", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "bootstrap-material-design/dist/js/ripples.min.js", "data-turbolinks-track" => true %>
-    <script>
-      $.material.init();
-    </script>
-
+    <%#= javascript_include_tag "bootstrap-material-design/dist/js/material.min.js", "data-turbolinks-track" => true %>
+    <%#= javascript_include_tag "bootstrap-material-design/dist/js/ripples.min.js", "data-turbolinks-track" => true %>
 
     <!-- Sliders -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-
     <!-- Dropdown.js -->
     <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
     <script>
       $("#dropdown-menu select").dropdown();
     </script>
+    <script>
+      $.material.init();
+    </script>
 
-   
+   <!-- prism.js scripts -->
+   <%= javascript_include_tag 'prism/prism.js' %>
+   <%= javascript_include_tag 'prism/components/prism-javascript.min.js' %>
 
 
 

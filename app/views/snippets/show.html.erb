@@ -1,121 +1,93 @@
 <!-- step and code -->
-  <div class="row">
-    <div class="col-sm-12">
-      
-      <!-- snippet title -->
-      <h1 class="header">Step Title: <%= @snippet.name %></h1>
-      
-      <div class="panel panel-default">
-        
-        <!-- snippet description -->
-        <div class="panel-body">
-        <%= @snippet.description.html_safe %>
-        </div>
-                                          <!-- previous snippet description -->
-                                          <!-- <div class="well infobox"> -->
-        
-        <!-- snippet tags -->
-        <div class="panel-footer panel-info">
-          <small> <em>programming with</em> </small> <span class="label label-material-indigo"><%= @snippet.core_language %></span>
-          <small> <em>building a</em> </small> <span class="label label-material-indigo"><%= @snippet.code_term %></span>
-          <small> <em>using a</em> </small> <span class="label label-material-indigo"><%= @snippet.tool %></span>
-        </div>
-
+<div class="row">
+  <div class="col-sm-12">
+    <!-- snippet title -->
+    <h1 class="header">Step Title: <%= @snippet.name %></h1>
+    <!-- START panel -->
+    <div class="panel panel-default">
+      <!-- snippet description -->
+      <div class="panel-body">
+        <p class="text-muted"><%= @snippet.description.html_safe %></p>
+      </div>
+      <!-- snippet tags -->
+      <div class="panel-footer panel-info">
+        <small> <em>programming with</em> </small> <span class="label label-material-indigo"><%= @snippet.core_language %></span>
+        <small> <em>building a</em> </small> <span class="label label-material-indigo"><%= @snippet.code_term %></span>
+        <small> <em>using a</em> </small> <span class="label label-material-indigo"><%= @snippet.tool %></span>
       </div>
     </div>
+    <!-- END panel -->
   </div>
+</div>
 
-  <div class="row">
-    <!-- type-along snippet -->
-    <div class="col-sm-11">
-      <pre>
-        <code>
-          <div id="StringALong" class="language-javascript"></div>
-        </code>
-      </pre>
-    </div>
+<!-- START gameboard row -->
+<div class="row">
 
-    
-    <!-- highlighted snippet -->
-    <div class="col-sm-11">
-    <h1 class="header">Highlighted Snippet for: <%= @snippet.name %></h1>
-      <pre>
-        <code>
-          <div id="StringALong-highlighted"></div>
-        </code>
-      </pre>
-    </div>
-
-  
-    <hr>
-    <!-- action area
-    <div class="col-sm-1" style="text-align:center;">
-      
-      <!-- game options -->
+  <!-- START action area -->
+  <div class="col-sm-2 pull-right" style="text-align:center;">
+    <!-- START game options -->
       <!-- start game -->
-      <a id="start-snippet" href="javascript:void(0)"><span style="margin:5px" class="btn btn-primary btn-fab btn-raised mdi-av-play-arrow"></span></a>
-
+      <a id="start-snippet" href="javascript:void(0)">
+        <span style="margin:5px" class="btn btn-primary btn-fab btn-raised mdi-av-play-arrow"></span>
+      </a>
       <!-- clock    mdi-action-alarm -->
       <span style="margin:5px" class="btn btn-primary btn-fab btn-raised mdi-action-alarm"></span>
-      
       <!-- replay    mdi-action-autorenew -->
       <span style="margin:5px" class="btn btn-primary btn-fab btn-raised mdi-action-autorenew"></span>
-      
       <div class="list-group-separator"></div>
-      
       <!-- prev    mdi-av-skip-previous-->
       <%= link_to snippet_path(@snippet.id-1) do %>
         <span style="margin:5px;" class="btn btn-material-indigo btn-fab btn-raised mdi-av-skip-previous"></span>
       <% end %>
-
       <!-- next   mdi-av-skip-next-->
       <%= link_to snippet_path(@snippet.id+1) do %>
         <span style="margin:5px" class="btn btn-material-indigo btn-fab btn-raised mdi-av-skip-next"></span>
       <% end %>
-    
-      
       <!-- settings  mdi-action-settings -->
       <span style="margin:5px" class="btn btn-material-indigo btn-fab btn-raised mdi-action-settings"></span>
-   
-      
-      
+    <!-- END game options -->
 
-
-
-      <!-- admin options -->
-      <div id="game-options">
-        <!-- new snippet -->
-        <%= link_to new_snippet_path do %>
-          <span style="margin:5px" class="btn btn-success btn-fab btn-raised mdi-content-add"> </span>
-        <% end %>
-        <!-- edit snippet -->
-        <%= link_to edit_snippet_path(@snippet.id) do %>
-          <span style="margin:5px" class="btn btn-material-deep-orange btn-fab btn-raised mdi-image-edit"></span>
-        <% end %>
-        <!-- delete snippet -->
-        <%= link_to snippet_path(@snippet.id), html_options = { method: :delete} do %>
-          <span style="margin:5px" class="btn btn-material-red btn-fab btn-raised mdi-content-clear"></span>
-        <% end %>
-        
-      </div>
+    <!-- START admin options -->
+    <div id="game-options">
+      <!-- new snippet -->
+      <%= link_to new_snippet_path do %>
+        <span style="margin:5px" class="btn btn-success btn-fab btn-raised mdi-content-add"> </span>
+      <% end %>
+      <!-- edit snippet -->
+      <%= link_to edit_snippet_path(@snippet.id) do %>
+        <span style="margin:5px" class="btn btn-material-deep-orange btn-fab btn-raised mdi-image-edit"></span>
+      <% end %>
+      <!-- delete snippet -->
+      <%= link_to snippet_path(@snippet.id), html_options = { method: :delete} do %>
+        <span style="margin:5px" class="btn btn-material-red btn-fab btn-raised mdi-content-clear"></span>
+      <% end %>
     </div>
+    <!-- END admin options -->
   </div>
+  <!-- END action area -->
 
 
-<!-- <div class="row">
-  <div class="col-sm-10"> -->
-
-    <!-- "highlighted" snippet title -->
-    <!-- <h1 class="header">Highlighted Snippet for: <%# @snippet.name %></h1>
-
-    <div class="panel panel-default">      
-      <div class="panel-body">
-        <pre>
-          <code class="language-javascript">
-            <div id="code-highlighted"><%# @snippet.snippet %></div>
-          </code>
-        </pre>
-      </div>
-    </div>
+  <!-- START type-along snippet -->
+  <div class="col-sm-10">
+    <pre>
+    <code>
+      <div id="StringALong" class="language-javascript"></div>
+    </code>
+    </pre>
   </div>
-</div> -->
+  <!-- END type-along snippet -->
+  
+
+  <!-- START highlighted snippet -->
+  <div class="col-sm-10 pull-left">
+  <h1 class="header">Highlighted Snippet for: <%= @snippet.name %></h1>
+    <pre>
+    <code>
+      <div id="StringALong-highlighted" class="language-<%= @snippet.core_language %>"></div>
+    </code>
+    </pre>
+  </div>
+  <!-- END highlighted snippet -->
+
+</div>
+<!-- END gameboard row -->

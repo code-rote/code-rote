@@ -10,28 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ * require_tree .
  *= require_self
 
 
 * bootstrap core css
 *= require bootstrap/dist/css/bootstrap.min.css
 
-
 * bootstrap-material-design  
-* require bootstrap-material-design/dist/css/material-wfont.min.css
-* require bootstrap-material-design/dist/css/ripples.min.css
+*= require bootstrap-material-design/less/material-wfont.less
+*= require bootstrap-material-design/less/ripples.less
+* Custom bootstrap-material-design styles.less
+*= require material-design-custom.less
 
 * prism theme, downloaded from: http://prismjs.com/download.html
 *= require prism/themes/prism-dark.css
-
-* Custom bootstrap-material-design styles.less
-
- */
+*/
 
 /*bootstrap custom css*/
 /* centered columns styles */
-/** require app/assets/stylesheets/material-design-custom.less*/
+
 .row-centered {
     text-align:center;
 }
