@@ -1,7 +1,9 @@
-var snippet;
-var run_once = false;
+
 
 (function(window, document, undefined) {
+  var snippet;
+  var run_once = false;
+
   $(document).on("ready page:load",function(){
     
     //-----------------------------------------------------------------------//
@@ -11,12 +13,15 @@ var run_once = false;
     //
     // grab ID from params
     var snippetId = window.location.pathname.split("/").pop();
-    // request snippet from DB
-    $.get('/snippets/'+ snippetId +'.json', function(data){
-      snippet = new StringALong(data.snippet);
-      // log snippet to test AJAX req
-      // console.log(snippet);
-    });
+    if (snippetId !== null){
+      // request snippet from DB
+      $.get('/snippets/'+ snippetId +'.json', function(data){
+        snippet = new StringALong(data.snippet);
+        // log snippet to test AJAX req
+        // console.log(snippet);
+      });
+    }
+    
 
 
     //-----------------------------------------------------------------------//
@@ -112,17 +117,14 @@ var startListeningForKeypress = function(){
     $(document).keydown(function(e) {
         switch (e.which) {
             case 8: // backspace
-            // console.log("Backspace");
             e.preventDefault();
             break;
           case 32: // spacebar 
-            // console.log("Space");
             e.preventDefault();
             charCode = 32;
-            // console.log(String.fromCharCode(snippet.getElement().charCode));
-            console.log("THIS IS THE 'mystery char' = " + 
-                        snippet.getElement().charCode + " " +
-                        String.fromCharCode(snippet.getElement().charCode));
+            // console.log("THIS IS THE 'mystery char' = " + 
+            //             snippet.getElement().charCode + " " +
+            //             String.fromCharCode(snippet.getElement().charCode));
             if (charCode === snippet.getElement().charCode){
                   console.log("MATCH");
                   // toggling the matched elements class

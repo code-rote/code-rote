@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CodeRote</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <!-- Mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Twitter Bootstrap -->
-    <!-- Material Design for Bootstrap -->
-      <!-- Dropdown.js -->
-      <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Dropdown.js -->
+  <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,42 +21,18 @@
     <%= yield %> 
   </div>
 
+  <!-- Sliders -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+  <!-- Dropdown.js -->
+  <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+  <script>
+    $("#dropdown-menu select").dropdown();
+  </script>
+  <script>
+    $.material.init();
+  </script>
 
-    <!-- Twitter Bootstrap -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
-
-    <!-- Material Design for Bootstrap -->
-    <%#= javascript_include_tag "bootstrap-material-design/dist/js/material.min.js", "data-turbolinks-track" => true %>
-    <%#= javascript_include_tag "bootstrap-material-design/dist/js/ripples.min.js", "data-turbolinks-track" => true %>
-
-    <!-- Sliders -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-    <!-- Dropdown.js -->
-    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
-    <script>
-      $("#dropdown-menu select").dropdown();
-    </script>
-    <script>
-      $.material.init();
-    </script>
-
-   <!-- prism.js scripts -->
-   <%= javascript_include_tag 'prism/prism.js' %>
-   <%= javascript_include_tag 'prism/components/prism-javascript.min.js' %>
-
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="page-footer">
-        <hr>
-        <div class=" btn-group-justified">
-            <a href="/about" class="btn btn-material-teal btn-flat ">about code-rote</a>
-            <a href="/project" class="btn btn-material-teal btn-flat ">project overview</a>
-            <a href="/contact" class="btn btn-material-teal btn-flat  ">see our team</a>
-        </div>
-      </div>
-    </div>
-  </footer> 
+  <%= render partial: 'layouts/footer' %>
+ 
 </body>
 </html>
