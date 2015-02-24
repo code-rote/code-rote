@@ -22,9 +22,11 @@
 
 <body>
   <%= render partial: 'layouts/navbar' %>
+  
   <div class="container">
     <%= yield %> 
   </div>
+  
   <%= javascript_include_tag 'prism/prism.js' %>
   <%= javascript_include_tag 'prism/components/prism-javascript.min.js' %>
 
@@ -42,28 +44,6 @@
 
     <!-- Sliders -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-    <script>
-      $(function() {
-        $.material.init();
-        // $(".shor").noUiSlider({
-        //   start: 40,
-        //   connect: "lower",
-        //   range: {
-        //     min: 0,
-        //     max: 100
-        //   }
-        // });
-        // $(".svert").noUiSlider({
-        //   orientation: "vertical",
-        //   start: 40,
-        //   connect: "lower",
-        //   range: {
-        //     min: 0,
-        //     max: 100
-        //   }
-        // });
-      });
-    </script>
 
     <!-- Dropdown.js -->
     <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>

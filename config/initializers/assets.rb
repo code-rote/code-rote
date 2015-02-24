@@ -22,6 +22,3 @@ Rails.application.config.assets.precompile += %w(bootstrap-material-design/dist/
 # prism.js files
 Rails.application.config.assets.precompile += %w( prism/components/prism-javascript.min.js )
 Rails.application.config.assets.precompile += %w( prism/prism.js )
-
-# keypress js
-# Rails.application.config.assets.precompile += %w( Keypress/keypress.js )
