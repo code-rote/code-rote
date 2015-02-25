@@ -26,14 +26,14 @@ class SnippetsController < ApplicationController
   end
 
   def update
-      if @snippet.update_attributes(snippet_params)
-        redirect_to snippet_path(snippet.id)
-      else
-        redirect_to edit_snippet_path(snippet.id)
-      end
+  # need some checking to happen here for security
+      find_snippet
+      @snippet.update_attributes(snippet_params)
+      redirect_to snippet_path(@snippet.id)
   end
 
   def destroy
+      find_snippet
       @snippet.destroy
       redirect_to snippets_path
   end

@@ -1,66 +1,63 @@
-<form class="form-horizontal">
-  <fieldset>
-    <%= form_for snippet do |f| %>
+    <%= form_for snippet, html: {class: 'form-horizontal'} do |f| %>
 
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: name %>
       <% end -%>
 
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_step_num">Step Number</label>
-          <%= f.text_field :step_num, placeholder: 'step_num', class: 'form-control floating-label' %>
-        </div>
-      </div>        
-        
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_name">Snippet Name</label>
-          <%= f.text_field :name, placeholder: 'name', class: 'form-control floating-label' %>
-        </div>
-      </div>
-        
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_code_term">Code Term</label>
-          <%= f.text_field :code_term, placeholder: ':code_term', class: 'form-control floating-label' %>
-        </div>
-      </div>
-        
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_core_language">Core Language</label>
-          <%= f.text_field :core_language, placeholder: 'core_language', class: 'form-control floating-label' %>
-        </div>
-      </div>       
-         
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_tool">Tool</label>
-          <%= f.text_field :tool, placeholder: 'tool', class: 'form-control floating-label' %>
-        </div>
-      </div>        
-        
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet_description">Description</label>
-          <%= f.text_area :description, placeholder: 'description', :cols => "10", :rows => "10", class: 'form-control floating-label' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <label class="control-label" for="snippet">Snippet</label>
-          <%= f.text_area :snippet, placeholder: 'Snippet', :cols => "10", :rows => "10", class: 'form-control floating-label' %>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <%= f.submit 'Save Snippet' , class: 'btn btn-success btn-block' %>
-        </div>
-      </div>
-      
-    <% end%>
+      <fieldset>
 
-  </fieldset>
-</form>
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_step_num">Step Number</label>
+            <%= f.text_field :step_num, placeholder: 'step_num', class: 'form-control floating-label' %>
+          </div>
+        </div>        
+          
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_name">Snippet Name</label>
+            <%= f.text_field :name, placeholder: 'name', class: 'form-control floating-label' %>
+          </div>
+        </div>
+          
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_code_term">Code Term</label>
+            <%= f.text_field :code_term, placeholder: ':code_term', class: 'form-control floating-label' %>
+          </div>
+        </div>
+          
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_core_language">Core Language</label>
+            <%= f.text_field :core_language, placeholder: 'core_language', class: 'form-control floating-label' %>
+          </div>
+        </div>       
+           
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_tool">Tool</label>
+            <%= f.text_field :tool, placeholder: 'tool', class: 'form-control floating-label' %>
+          </div>
+        </div>        
+          
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet_description">Description</label>
+            <%= f.text_area :description, placeholder: 'description', :cols => "10", :rows => "10", class: 'form-control floating-label' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <label class="control-label" for="snippet">Snippet</label>
+            <%= f.text_area :snippet, placeholder: 'Snippet', :cols => "10", :rows => "10", class: 'form-control floating-label' %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-xs-offset-1 col-xs-10">
+            <%= f.submit 'Save Snippet' , class: 'btn btn-success btn-block' %>
+          </div>
+        </div>
+      </fieldset>
+    <% end%>
