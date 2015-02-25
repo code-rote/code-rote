@@ -1,16 +1,15 @@
 @import "bootstrap-material-design/less/material-wfont.less";
 
 // Override @primary color with one took from _colors.less
-@primary: @bluegrey;
-
 // Bootstrap shades
- @primary: @bluegrey;
- @success: @deeporange;
- @info: @blue-grey-100;
- @warning: @deep-orange-100;
- @danger: @red-500;
+@primary: @bluegrey;
+@success: @deeporange;
+@info: @blue-grey-100;
+@warning: @deep-orange-100;
+@danger: @red-500;
 
-// @all-variations: ~"-default, -primary, -info, -success, -warning, -danger";
+@all-variations: ~"-default, -primary, -info, -success, -warning, -danger";
+
 html,
 body {
   height: 100%;
@@ -20,3 +19,29 @@ body {
 footer {
   
 }
+
+/*bootstrap custom css*/
+.unmatched-letter{
+  opacity: 0.5;
+}
+
+.index-play-button{
+  vertical-align: middle;
+  height: inherit;
+  margin-left: .1em;
+}
+
+.panel-info {
+  border-color: @primary;
+}
+
+/*.list-group-item {
+  text-align: center; 
+  width: auto
+}*/
+
+/*.page-footer{
+  top: 100px;
+  margin-bottom: 10px;
+  position: relative;
+}*/

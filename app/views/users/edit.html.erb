@@ -1,2 +1,10 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <h1 class="page-header">Edit</h1>
+    <div class="panel">
+      <div class="panel-body">
+        <%= render partial: 'users/user_form', locals: { user: @user } %>
+      </div>
+    </div>
+  </div>
+</div>

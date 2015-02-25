@@ -26,39 +26,3 @@
 * prism theme, downloaded from: http://prismjs.com/download.html
 *= require prism/themes/prism-dark.css
 */
-
-/*bootstrap custom css*/
-/* centered columns styles */
-
-.row-centered {
-    text-align:center;
-}
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
-}
-
-.unmatched-letter{
-  opacity: 0.5;
-}
-
-.list-group-item {
-  text-align: center; 
-  width: auto
-}
-
-.page-footer{
-  top: 100px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.index-play-button{
-  vertical-align: middle;
-  height: inherit;
-  margin-left: .1em;
-}
