@@ -3,7 +3,7 @@
     <h1 class="page-header">Edit</h1>
     <div class="panel">
       <div class="panel-body">
-        <%= render partial: 'users/user_form', locals: { user: @user } %>
+        <%= render partial: 'users/user_form', locals: { user: current_user } %>
       </div>
     </div>
   </div>

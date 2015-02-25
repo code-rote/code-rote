@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-sm-12">
     <!-- snippet title -->
-    <h1 class="header">Step Title: <%= @snippet.name %></h1>
+    <h1 class="page-header">Step Title: <%= @snippet.name %></h1>
     <!-- START panel -->
     <div class="panel panel-default">
       <!-- snippet description -->
@@ -80,7 +80,7 @@
 
   <!-- START highlighted snippet -->
   <div class="col-sm-10 pull-left">
-  <h1 class="header">Highlighted Snippet for: <%= @snippet.name %></h1>
+  <h3 class="header">Highlighted Snippet for: <%= @snippet.name %></h3>
     <pre>
     <code>
       <div id="StringALong-highlighted" class="language-<%= @snippet.core_language %>"></div>

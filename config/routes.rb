@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
-  delete '/sessions', to: 'sessons#destroy', as: 'logout'
+  delete '/sessions', to: 'sessions#destroy', as: 'logout'
 
   # user routes
   resources :users, except: [:index, :new]

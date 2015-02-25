@@ -1,22 +1,28 @@
 <div class="row">
   <div class="col-xs-12">
-    <h1>Snippets and Steps</h1>
+    <h1 class="page-header">Snippets and Steps</h1>
 
-    <div class="list-group">
-      <% @snippets.each do |snippet| %>
-        <div class="list-group-item">
-          <div class="row-action-primary">
-              <i class="mdi-file-folder"></i>
-          </div>
-          <div class="row-content">
-              <div class="action-secondary"><i class="mdi-material-info"></i></div>
-              <h4 class="list-group-item-heading"><%= link_to(snippet.name, snippet_path(snippet), class: 'text-success') %></h4>
-              <p class="list-group-item-text"><%= snippet.description %></p>
-          </div>
+    <div class="panel">
+      <div class="panel-body">
+        <div class="list-group">
+          <% @snippets.each do |snippet| %>
+            <div class="list-group-item">
+              <div class="row-action-primary">
+                  <i class="mdi-file-folder"></i>
+              </div>
+              <div class="row-content">
+                  <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                  <h4 class="list-group-item-heading"><%= link_to(snippet.name, snippet_path(snippet), class: 'text-success') %></h4>
+                  <p class="list-group-item-text"><%= snippet.description.html_safe %></p>
+              </div>
+            </div>
+            <div class="list-group-separator"></div>
+          <% end%>
         </div>
-        <div class="list-group-separator"></div>
-      <% end%>
+      </div>
     </div>
+
+    
 
   </div>
 </div>

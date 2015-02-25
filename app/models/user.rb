@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   # use bcrypt and ActiveModel has_secure_password
   has_secure_password
 
@@ -17,10 +18,13 @@ class User < ActiveRecord::Base
             presence: true,
             length: {minimum: 8},
             # password must not be all lowercase letters
-            # format: {without: /\A[a-z]+\z/},
+            format: {without: /\A[a-z]+\z/},
             if: :password_required?
 
+
   # associations
+  has_many :snippets
+
 
   # class methods
   def self.confirm(email_param, password_param)
@@ -36,3 +40,4 @@ class User < ActiveRecord::Base
     self.new_record? or self.email_changed?
   end
 end
+

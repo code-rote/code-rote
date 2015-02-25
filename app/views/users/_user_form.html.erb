@@ -1,42 +1,42 @@
-<form class="form-horizontal">
+<%= form_for user, html: {class: 'form-horizontal'} do |f| %>
+
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
   <fieldset>
-    <%= form_for user do |f| %>
-
-        <div class="form-group">
-          <div class="col-xs-offset-1 col-xs-10">
-            <label class="control-label" for="email">Email</label>
-            <%= f.text_field :email, placeholder: 'email', class: 'form-control' %>
-          </div>
-        </div>        
-          
-        <div class="form-group">
-          <div class="col-xs-offset-1 col-xs-10">
-            <label class="control-label" for="email_confirmation">Email Confirmation</label>
-            <%= f.text_field :email_confirmation, placeholder: 'email_confirmation', class: 'form-control' %>
-          </div>
-        </div>
-          
-        <div class="form-group">
-          <div class="col-xs-offset-1 col-xs-10">
-            <label class="control-label" for="password">Password </label>
-            <%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
-          </div>
-        </div>
-          
-        <div class="form-group">
-          <div class="col-xs-offset-1 col-xs-10">
-            <label class="control-label" for="password_confirmation">Password Confirmation</label>
-            <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control' %>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <div class="col-xs-offset-1 col-xs-10">
-            <%= f.submit 'signup' , class: 'btn btn-success btn-block' %>
-          </div>
-        </div>
+    <div class="form-group">
+      <div class="col-xs-offset-1 col-xs-10">
+        <label class="control-label" for="email">Email</label>
+        <%= f.text_field :email, placeholder: 'email', class: 'form-control' %>
+      </div>
+    </div>        
       
-    <% end%>
-
+    <div class="form-group">
+      <div class="col-xs-offset-1 col-xs-10">
+        <label class="control-label" for="email_confirmation">Email Confirmation</label>
+        <%= f.text_field :email_confirmation, placeholder: 'email_confirmation', class: 'form-control' %>
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <div class="col-xs-offset-1 col-xs-10">
+        <label class="control-label" for="password">Password </label>
+        <%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <div class="col-xs-offset-1 col-xs-10">
+        <label class="control-label" for="password_confirmation">Password Confirmation</label>
+        <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-xs-offset-1 col-xs-10">
+        <%= f.submit 'signup' , class: 'btn btn-success btn-block' %>
+      </div>
+    </div>
   </fieldset>
-</form>
+<% end%>
