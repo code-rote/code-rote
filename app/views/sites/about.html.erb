@@ -1,1 +1,265 @@
-about page
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="page-header">About Code-Rote Group Project</h1>
+
+
+    <!-- START key takeaways -->
+    <h3 class="text-primary"><header>Key Takeaways</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-diamond"></i>  
+            Do not include a 'framework' of any size unless you read AT LEAST the first section of documentation, and really, AT LEAST the first page... <strong>README's aren't just a "convention"</strong>. Respect the effort that was put into the library and save yourself HOURS of debugging down the road. <em>(SEE: Bootstrap's container vs container-fluid for a good example.)</em>
+          </li>
+          <li><i class="fa-li fa fa-diamond"></i>  
+            <strong>Gold-plating is the devil</strong>, especially when you dont even have silver plates yet. Meaning, finish the core before you move on to anything more.
+          </li>
+          <li><i class="fa-li fa fa-diamond"></i>  
+            Libraries can rewrite what you do (i.e. break something that you "fixed", or "break" something new). This happened when trying to use Keypress.js in conjunction with my home-grown String-A-Long jQuery function.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END key takeaways -->
+
+
+    <!-- START elevator pitch -->
+    <h3 class="text-primary"><header>Elevator Pitch</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-angle-double-right"></i>
+            The goal is to build a 'read-a-long' or 'type-a-long' adventure game that makes leveling-up your developer skills fun instead of a chore.
+          </li>
+          <li><i class="fa-li fa fa-angle-double-right"></i>
+            To be clear, we are initially targeting people with 6 mo to 1 yr of coding experience. Our differentiator in the marketplace is that we integrate high-quality notes into our gaming process. Which allows a player to gain the benefits of ROTE learning for both the physical and mental processes.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END elevator pitch -->
+
+
+    <!-- START assumptions -->
+    <h3 class="text-primary"><header>Assumptions</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-angle-double-right"></i> 
+            Users want to practice typing scripted code NOT free-form code with hints
+          </li>
+          <li><i class="fa-li fa fa-angle-double-right"></i> 
+            Users prefer a process of sequential steps over one-off tutorials
+          </li>
+          <li><i class="fa-li fa fa-angle-double-right"></i> 
+            Users care about being as accurate and quick as humanly possible
+          </li>
+          <li><i class="fa-li fa fa-angle-double-right"></i>
+            There are enough 'standardized' processes/patterns to provide replay-ability for users
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END assumptions -->
+
+
+    <!-- START personas -->
+    <h3 class="text-primary"><header>Personas</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+          <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th>Muscle Memory Mike</th>
+                <th>Fast Fiona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3-6 months coding experience</td>
+                <td>6+ months of coding experience</td>
+              </tr>
+              <tr>
+                <td>Ready for hammering down the muscle memory NOT still struggling with basic syntax</td>
+                <td>Focused on metrics &amp; tracking performance over time.</td>
+              </tr>
+              <tr>
+                <td>Structured as project style to help reinforce a verified sequence of steps.. build toward a goal. Wants to read/learn along the way. "Guide me along the right path, make sure I practice correct code in a logical sequence."</td>
+                <td>Pick and choose what steps to tackle. Doesn't care about the reading/learning along the way. "Just get me started".</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <!-- END personas -->
+
+
+    <!-- START features -->
+    <h3 class="text-primary"><header>Features</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+          <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th>Non-Technical</th>
+                <th>Technical</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ability to capture Code input from a users device</td>
+                <td>Real-time character matching based on keyboard input and injected code snippet</td>
+              </tr>
+              <tr>
+                <td>A way to easily "see" my improvement (not necessarily just a visual element). Time tracking may be a useful way to track progress over time</td>
+                <td>Time tracking metrics (timers, calculated fields, user_scores, etc.)</td>
+              </tr>
+              <tr>
+                <td>Ability to "save" the work I've "completed" while on the 'type-a-long' adventure. (will help to ensure the user doesn't feel they are wasting their time.)</td>
+                <td>User profiles, authentication, db associations between snippet and user</td>
+              </tr>
+              <tr>
+                <td>Ability to challenge my friends (competitively and/or collaboratively)</td>
+                <td>Real-time gamification using a node.js based module</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <!-- END features -->
+
+
+    <!-- START competitive analysis brief -->
+    <h3 class="text-primary"><header>Competitive Analysis (Brief)</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <div class="row">
+          <!-- START wpm games -->
+          <div class="col-sm-6">
+            <p>
+              <strong>WPM Games</strong> (e.g. <a href="https://typing.io">typing.io</a>, <a href="http://www.broderbund.com/c-33-mavis-beacon.aspx">Mavis Beacon Typing Training</a>, <a href="https://www.youtube.com/watch?v=vVtw-ctzA7Q">Mario Teaches Typing</a>)
+            </p>
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-plus"></i> timed</li>
+              <li><i class="fa-li fa fa-plus"></i> practice muscle memory</li>
+              <li><i class="fa-li fa fa-minus"></i> not sequenced</li>
+              <li><i class="fa-li fa fa-minus"></i> mostly a physical exercise (not mental)</li>
+            </ul>
+          </div>
+          <!-- END wpm games -->
+          <!-- START music games -->
+          <div class="col-sm-6">
+            <p>
+              <strong>Music games</strong> (e.g. <a href="http://rocksmith.ubi.com/rocksmith/en-US/home/index.aspx">Rocksmith 2014</a>, esp. the <a href="https://www.youtube.com/watch?v=QGjfrbyHB58">Guitarcade feature</a>)
+            </p>
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-plus"></i> awesome use of gamification.</li>
+              <li><i class="fa-li fa fa-plus"></i> hooks onto a skill best learned by rote</li>
+              <li><i class="fa-li fa fa-plus"></i> make learning (muscle memory and ear training) fun!!!</li>
+              <li><i class="fa-li fa fa-minus"></i> not sequenced</li>
+              <li><i class="fa-li fa fa-minus"></i> not customizable</li>
+              <li><i class="fa-li fa fa-minus"></i> not sequenced</li>
+              <li><i class="fa-li fa fa-minus"></i> requires non-standard peripherals</li>
+              <li><i class="fa-li fa fa-minus"></i> limited by licensing</li>
+            </ul>
+          </div>
+          <!-- END music games -->
+        </div>
+      </div>
+    </div>
+    <!-- END competitive analysis brief -->
+
+
+    <!-- START mockups -->
+    <h3 class="text-primary"><header>Wireframes</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <h3 class="text-success text-center">gameboard version 1</h3><br>
+        <%= image_tag("code-rote-mockup-gameboard-v1.png", :class => "img-responsive") %>
+        <br>
+        <hr>
+        <h3 class="text-success text-center">user profile version 1</h3><br>
+        <%= image_tag("code-rote-mockup-user_profile-v1.png", :class => "img-responsive") %>
+      </div>
+    </div>
+    <!-- END mockups -->
+
+
+    <!-- START user stories -->
+    <h3 class="text-primary"><header>User Stories</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+
+            <!-- user story list -->
+            <dl class="dl-horizontal">
+              <!-- user -->
+              <dt>As a <span class="text-primary">User</span> I want to</dt>
+                <dd>signin</dd>
+                <dd>change password</dd>
+                <dd>reset password</dd>
+                <dd>view my profile</dd>
+                <dd>view course list</dd>
+                <dd>select a single course</dd>
+                <dd>select a single story</dd>
+                <dd>select a single feature</dd>
+                <dd>resume the 'game' where I left off</dd>
+                <dd>select a single course</dd>
+                <dd>see my high scores &amp; additional stats</dd>
+                <dd>edit profile</dd>
+                <dd>see overall stats</dd>
+                <dd>see where I left off</dd>
+                <dd>see 'friends' or competitors stats</dd>
+            </dl>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <dl class="dl-horizontal">
+            <!-- visitor -->
+            <dt>As a <span class="text-primary">Visitor</span> I want to</dt>
+              <dd>signup</dd>
+              <dd>see what your product has to offer</dd>
+              <dd>see the team members</dd>
+              <dd>signup with Github Creds</dd>
+              <dd>signup with Facebook creds</dd>
+              <dd>signup with Twitter</dd>
+            <!-- super user -->
+            <dt>As a <span class="text-primary">Super User</span> I want to</dt>
+              <dd>create a new course</dd>
+              <dd>create a new story</dd>
+              <dd>create a new feature</dd>
+              <dd>create a new step</dd>
+              <dd>edit a course</dd>
+              <dd>see full list of registered users with key user metrics (editable)</dd>
+              <dd>see key analytics from site usage</dd>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END user stories -->
+
+
+    <!-- START erd -->
+    <h3 class="text-primary"><header>ERD Draft</header></h3>
+    <div class="panel panel-default">
+      <!-- panel description -->
+      <div class="panel-body text-muted">
+        <h3 class="text-success text-center">ERD version 1</h3><br>
+        <%= image_tag("ERD.png", :class => "img-responsive") %>
+      </div>
+    </div>
+    <!-- END erd -->
+
+
+  </div>
+</div>

@@ -19,20 +19,20 @@
   
   <div class="container">
     <%= yield %> 
+
+    <!-- Sliders -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+    <!-- Dropdown.js -->
+    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+    <script>
+      $("#dropdown-menu select").dropdown();
+    </script>
+    <script>
+      $.material.init();
+    </script>
+
+    <%= render partial: 'layouts/footer' %>
   </div>
-
-  <!-- Sliders -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-  <!-- Dropdown.js -->
-  <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
-  <script>
-    $("#dropdown-menu select").dropdown();
-  </script>
-  <script>
-    $.material.init();
-  </script>
-
-  <%= render partial: 'layouts/footer' %>
  
 </body>
 </html>
