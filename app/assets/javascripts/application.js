@@ -26,11 +26,13 @@
 
 //= require_tree .
 
+(function() {
+  
 
   var snippet;
   var run_once = false;
 
-  $(document).on("ready page:load",function(){
+  $(document).on("ready page:load", function(){
     
     //-----------------------------------------------------------------------//
     // GET snippets using AJAX
@@ -47,7 +49,6 @@
         // console.log(snippet);
       });
     }
-    
 
 
     //-----------------------------------------------------------------------//
@@ -128,105 +129,106 @@
       startListeningForKeypress();
     });
 
-  });
 
+    //----------------------------------------------------------------------------//
+    // Listen for keypress events on.Click of #start-snippet btn
+    //----------------------------------------------------------------------------//
+    var startListeningForKeypress = function(){
+      
+      $(document).keypress(function(event){
+        //-----------------------------------------------------------------------//
+        // prevent the 'problem' keys from impeding play
+        //-----------------------------------------------------------------------// 
+        $(document).keydown(function(e) {
+            switch (e.which) {
+              case 8:  // backspace
+                       e.preventDefault();
+                       break;
+              case 32: // spacebar 
+                        e.preventDefault();
+                        charCode = 32;
+                        // console.log("THIS IS THE 'mystery char' = " + 
+                        //             snippet.getElement().charCode + " " +
+                        //             String.fromCharCode(snippet.getElement().charCode));
+                        if (charCode === snippet.getElement().charCode){
+                              console.log("MATCH");
+                              // toggling the matched elements class
+                              snippet.getElement().el.toggleClass("unmatched-letter");
+                              snippet.updateIndex();
+                              break;
+                        }
+                        break;
+               case 9:
+                      // tab ASCII 9
+                      console.log("Tab");
+                      e.preventDefault();
+                      // treat 'tab' as a space. ASCII 32.
+                      //have the tab actually put in two sequential 'spaces'
+                      charCode = 32;
+                      console.log("NEW PART= " + snippet.getElement().charCode);
+                      if (charCode === snippet.getElement().charCode){
+                            console.log("MATCH");
+                            // toggling the matched elements class
+                            snippet.getElement().el.toggleClass("unmatched-letter");
+                            snippet.updateIndex();
+                            break;
+                          }
+                      break;
+              case 27:
+                      // esc
+                      console.log("Escape");
+                      e.preventDefault();
+                      break;
 
-//----------------------------------------------------------------------------//
-// Listen for keypress events on.Click of #start-snippet btn
-//----------------------------------------------------------------------------//
-var startListeningForKeypress = function(){
-  
-  $(document).keypress(function(event){
-    //-----------------------------------------------------------------------//
-    // prevent the 'problem' keys from impeding play
-    //-----------------------------------------------------------------------// 
-    $(document).keydown(function(e) {
-        switch (e.which) {
-            case 8: // backspace
-            e.preventDefault();
-            break;
-          case 32: // spacebar 
-            e.preventDefault();
-            charCode = 32;
-            // console.log("THIS IS THE 'mystery char' = " + 
-            //             snippet.getElement().charCode + " " +
-            //             String.fromCharCode(snippet.getElement().charCode));
-            if (charCode === snippet.getElement().charCode){
-                  console.log("MATCH");
-                  // toggling the matched elements class
-                  snippet.getElement().el.toggleClass("unmatched-letter");
-                  snippet.updateIndex();
-                  break;
-                }
-            break;
-          case 9:
-            // tab ASCII 9
-            console.log("Tab");
-            e.preventDefault();
-            // treat 'tab' as a space. ASCII 32.
-            //have the tab actually put in two sequential 'spaces'
-            charCode = 32;
-            console.log("NEW PART= " + snippet.getElement().charCode);
-            if (charCode === snippet.getElement().charCode){
-                  console.log("MATCH");
-                  // toggling the matched elements class
-                  snippet.getElement().el.toggleClass("unmatched-letter");
-                  snippet.updateIndex();
-                  break;
-                }
-            break;
-          case 27:
-            // esc
-            console.log("Escape");
-            e.preventDefault();
-            break;
+              default:
+                      // console.log(e.which);
+                      break;
+            }
+          });
 
-          default:
-            // console.log(e.which);
-            break;
+        //-----------------------------------------------------------------------//
+        // DESCRIBE AND REFACTOR BELOW
+        //-----------------------------------------------------------------------// 
+
+        // ascii 13 10 13 10 gets us to the fourth line after a space.
+        //    13 = CR = Carriage Return = \r
+        //    10 = LF = Line Feed
+        //    11 = VT = Vertical Tab <maybe this is when we paste in 'tab' chars?>
+        // after the 'last' char in a given line is pressed the 
+        //    'ignored ASCII 10-31. treated as a match..13' is triggered twice.
+        //    then you can press any key... which will match 
+        //    "non-keyboard characters"... x4 
+        //    (may just the number we need till we get to a "space" or "indent" for the next code block... )
+        // we may want to auto indent x4
+        //
+        // for RUBY... a pattern emerges...
+        //    NL NL SP SP   => moving from a Class/Model Instantiation to the 1st method.
+        //    NL SP SP SP SP => moving from a def method, to the method block.
+        var charCode = event.keyCode;
+        var char = String.fromCharCode(charCode);
+
+        // do simple char match and console.log
+        if (snippet.getElement().charCode > 9 && snippet.getElement().charCode < 32){
+          console.log("ignored ASCII 10-31. treated as a match.." + snippet.getElement().charCode);
+          snippet.updateIndex();
+        } else if (charCode === snippet.getElement().charCode){
+          console.log("MATCH");
+          // toggling the matched elements class
+          snippet.getElement().el.toggleClass("unmatched-letter");
+
+          // check if the current element is the last Element of the 
+          if (snippet.endOfStringMatch()){
+            alert("that was the end of the string...");
+          };
+          snippet.updateIndex();
+        } else {
+           // do not go to next letter 
+           // until there is a match
+           console.log("uh oh....");
         }
+
       });
-
-    //-----------------------------------------------------------------------//
-    // DESCRIBE AND REFACTOR BELOW
-    //-----------------------------------------------------------------------// 
-
-    // ascii 13 10 13 10 gets us to the fourth line after a space.
-    //    13 = CR = Carriage Return = \r
-    //    10 = LF = Line Feed
-    //    11 = VT = Vertical Tab <maybe this is when we paste in 'tab' chars?>
-    // after the 'last' char in a given line is pressed the 
-    //    'ignored ASCII 10-31. treated as a match..13' is triggered twice.
-    //    then you can press any key... which will match 
-    //    "non-keyboard characters"... x4 
-    //    (may just the number we need till we get to a "space" or "indent" for the next code block... )
-    // we may want to auto indent x4
-    //
-    // for RUBY... a pattern emerges...
-    //    NL NL SP SP   => moving from a Class/Model Instantiation to the 1st method.
-    //    NL SP SP SP SP => moving from a def method, to the method block.
-    var charCode = event.keyCode;
-    var char = String.fromCharCode(charCode);
-
-    // do simple char match and console.log
-    if (snippet.getElement().charCode > 9 && snippet.getElement().charCode < 32){
-      console.log("ignored ASCII 10-31. treated as a match.." + snippet.getElement().charCode);
-      snippet.updateIndex();
-    } else if (charCode === snippet.getElement().charCode){
-      console.log("MATCH");
-      // toggling the matched elements class
-      snippet.getElement().el.toggleClass("unmatched-letter");
-
-      // check if the current element is the last Element of the 
-      if (snippet.endOfStringMatch()){
-        alert("that was the end of the string...");
-      };
-      snippet.updateIndex();
-    } else {
-       // do not go to next letter 
-       // until there is a match
-       console.log("uh oh....");
-    }
-
+    };
   });
-};
+
+})();
